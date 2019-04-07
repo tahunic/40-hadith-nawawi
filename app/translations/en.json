@@ -1,3 +1,4 @@
 {
-  "containers.HomePage.header": "40 hadith Al-Nawawi"
+  "components.Hadith.details": "Details",
+  "containers.HomePage.header": "Al-Nawawi's Forty Hadith"
 }

@@ -8,6 +8,7 @@
  */
 
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
@@ -18,6 +19,9 @@ import GlobalStyle from '../../global-styles';
 export default function App() {
   return (
     <div>
+      <Helmet titleTemplate="%s - Al-Nawawi's Forty Hadith" defaultTitle="Al-Nawawi's Forty Hadith">
+        <meta name="description" content="Al-Nawawi's Forty Hadith application" />
+      </Helmet>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route component={NotFoundPage} />
