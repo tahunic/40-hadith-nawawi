@@ -6,11 +6,15 @@
 
 import { defineMessages } from 'react-intl';
 
-export const scope = 'app.containers.HadithList';
+export const scope = 'containers.HadithList';
 
 export default defineMessages({
   header: {
     id: `${scope}.header`,
     defaultMessage: 'This is the HadithList container!',
+  },
+  details: {
+    id: `${scope}.details`,
+    defaultMessage: 'Details',
   },
 });

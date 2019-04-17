@@ -2,9 +2,9 @@
 // import { mount } from 'enzyme';
 // import { enzymeFind } from 'styled-components/test-utils';
 
-// import Hadith from '../index';
+// import Navbar from '../index';
 
-describe('<Hadith />', () => {
+describe('<Navbar />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(false);
   });

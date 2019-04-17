@@ -4,10 +4,24 @@
  *
  */
 
-import { DEFAULT_ACTION } from './constants';
+import { LOAD_HADITHS, LOAD_HADITHS_ERROR, LOAD_HADITHS_SUCCESS } from './constants';
 
-export function defaultAction() {
+export function loadHadiths() {
   return {
-    type: DEFAULT_ACTION,
+    type: LOAD_HADITHS,
+  };
+}
+
+export function hadithsLoaded(hadiths) {
+  return {
+    type: LOAD_HADITHS_SUCCESS,
+    hadiths,
+  };
+}
+
+export function hadithsLoadingError(error) {
+  return {
+    type: LOAD_HADITHS_ERROR,
+    error,
   };
 }

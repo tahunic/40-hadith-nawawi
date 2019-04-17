@@ -1,4 +1,5 @@
 {
-  "components.Hadith.details": "Details",
-  "containers.HomePage.header": "Al-Nawawi's Forty Hadith"
+  "containers.HadithList.details": "Details",
+  "containers.HomePage.header": "Al-Nawawi's Forty Hadith",
+  "containers.HadithDetails.bismillah": "In the name of Allah, the Most Gracious, the Most Merciful."
 }

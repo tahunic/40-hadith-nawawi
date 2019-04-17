@@ -1,4 +1,5 @@
 {
-  "components.Hadith.details": "Detalji",
-  "containers.HomePage.header": "Četrdeset Nevevijevih hadisa"
+  "containers.HadithList.details": "Detalji",
+  "containers.HomePage.header": "Četrdeset Nevevijevih hadisa",
+  "containers.HadithDetails.bismillah": "U ime Allaha, Milostivog, Samilosnog."
 }

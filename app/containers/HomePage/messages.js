@@ -10,6 +10,6 @@ export const scope = 'containers.HomePage';
 export default defineMessages({
   header: {
     id: `${scope}.header`,
-    defaultMessage: "Al-Nawawi's Forty Hadith",
+    defaultMessage: "Al-Nawawi's Forty HadithListItem",
   },
 });

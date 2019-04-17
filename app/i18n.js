@@ -17,7 +17,7 @@ const bsTranslationMessages = require('./translations/bs.json');
 addLocaleData(enLocaleData);
 addLocaleData(bsLocaleData);
 
-const DEFAULT_LOCALE = 'en';
+const DEFAULT_LOCALE = 'bs';
 
 // prettier-ignore
 const appLocales = [

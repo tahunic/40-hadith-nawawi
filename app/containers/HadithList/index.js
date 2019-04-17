@@ -7,34 +7,59 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Helmet } from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
-import makeSelectHadithList from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import hadiths from '../../data/hadiths.json';
-import Hadith from '../../components/Hadith';
+import HadithListItem from './HadithListItem';
+import { loadHadiths } from './actions';
+import LoadingIndicator from '../../components/LoadingIndicator';
+import { makeSelectError, makeSelectHadiths, makeSelectLoading } from './selectors';
 
 /* eslint-disable react/prefer-stateless-function */
 export class HadithList extends React.PureComponent {
+  componentDidMount() {
+    this.props.getHadiths();
+  }
+
   render() {
-    return hadiths.map(h => <Hadith key={h.title} props={h} />);
+    const { loading, error, hadiths } = this.props;
+
+    if (loading) {
+      return <LoadingIndicator />;
+    }
+
+    if (error) {
+      return <h3>Something went wrong.</h3>;
+    }
+
+    if (hadiths && hadiths.length > 0) {
+      return hadiths.map(h => <HadithListItem key={h.hadith.index} hadith={h} />);
+    }
+
+    return null;
   }
 }
 
-HadithList.propTypes = {};
+HadithList.propTypes = {
+  getHadiths: PropTypes.func,
+  loading: PropTypes.bool,
+  error: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
+  hadiths: PropTypes.array,
+};
 
 const mapStateToProps = createStructuredSelector({
-  hadithList: makeSelectHadithList(),
+  loading: makeSelectLoading(),
+  error: makeSelectError(),
+  hadiths: makeSelectHadiths(),
 });
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatch,
+    getHadiths: () => dispatch(loadHadiths()),
   };
 }
 

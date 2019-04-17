@@ -7,15 +7,14 @@ import { initialState } from './reducer';
 
 const selectHadithListDomain = state => state.get('hadithList', initialState);
 
-/**
- * Other specific selectors
- */
-
-/**
- * Default selector used by HadithList
- */
-
 const makeSelectHadithList = () => createSelector(selectHadithListDomain, substate => substate.toJS());
 
+const makeSelectLoading = () => createSelector(selectHadithListDomain, countryListState => countryListState.get('loading'));
+
+const makeSelectError = () => createSelector(selectHadithListDomain, countryListState => countryListState.get('error'));
+
+const makeSelectHadiths = () =>
+  createSelector(selectHadithListDomain, countryListState => countryListState.get('hadiths'));
+
 export default makeSelectHadithList;
-export { selectHadithListDomain };
+export { selectHadithListDomain, makeSelectLoading, makeSelectError, makeSelectHadiths };
