@@ -20,6 +20,8 @@ import LoadingIndicator from '../../components/LoadingIndicator';
 import Bismillah from './Bismillah';
 import { loadHadith } from './actions';
 import { makeSelectHadith } from './selectors';
+import AudioPlayerContainer from './AudioPlayerContainer';
+import AudioPlayer from './AudioPlayer';
 
 /* eslint-disable react/prefer-stateless-function */
 export class HadithDetails extends React.PureComponent {
@@ -42,18 +44,19 @@ export class HadithDetails extends React.PureComponent {
           <FormattedMessage {...messages.bismillah} />
         </Bismillah>
 
-        <p>{hadith.summary}</p>
+        <div className="col-12 pt-3">
+          <p>{hadith.summary}</p>
+        </div>
 
-        <iframe
-          title="audio"
-          src={hadith.hadith.audioUrl}
-          width="500"
-          height="30"
-          frameBorder="0"
-          webkitallowfullscreen="true"
-          mozallowfullscreen="true"
-          allowFullScreen
-        />
+        <AudioPlayerContainer className="col-12">
+          <AudioPlayer
+            title="audio"
+            src={hadith.hadith.audioUrl}
+            webkitallowfullscreen="true"
+            mozallowfullscreen="true"
+            allowFullScreen
+          />
+        </AudioPlayerContainer>
       </div>
     );
   }

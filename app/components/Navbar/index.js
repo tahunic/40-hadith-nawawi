@@ -6,6 +6,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LocaleToggle from '../../containers/LocaleToggle';
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
@@ -17,9 +18,6 @@ class Navbar extends React.PureComponent {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5">
-        <button type="button" className="navbar-brand" href="#">
-          Navbar
-        </button>
         <button
           className="navbar-toggler"
           type="button"
@@ -33,20 +31,18 @@ class Navbar extends React.PureComponent {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
+          <div className="navbar-nav">
+            <div className="nav-item nav-link">
               <Link className="router-link" to="/">
                 <button type="button" className="nav-link">
-                  Home <span className="sr-only">(current)</span>
+                  Home
                 </button>
               </Link>
-            </li>
-          </ul>
+            </div>
+          </div>
+          <LocaleToggle />
           <form className="form-inline my-2 my-lg-0">
             <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-            <button type="button" className="btn btn-outline-success my-2 my-sm-0">
-              Search
-            </button>
           </form>
         </div>
       </nav>

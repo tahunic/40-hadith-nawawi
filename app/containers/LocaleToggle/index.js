@@ -21,39 +21,24 @@ export class LocaleToggle extends React.PureComponent {
     const { locale, onLocaleToggle } = this.props;
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <button
-          className="navbar-toggler ml-auto"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div className="navbar-nav ml-auto">
-            <div className="nav-item nav-link ml-auto">
-              <CountryFlag
-                onClick={() => onLocaleToggle('en')}
-                src="https://cdn1.iconfinder.com/data/icons/ensign-11/512/273_Ensign_Flag_Nation_kingdom-512.png"
-                alt="en"
-                opacity={locale === 'en' ? 1 : 0.3}
-              />
-            </div>
-            <div className="nav-item nav-link ml-auto">
-              <CountryFlag
-                onClick={() => onLocaleToggle('bs')}
-                src="https://cdn1.iconfinder.com/data/icons/ensign-11/512/36_Ensign_Flag_Nation_bosnia_and_herzegovina-512.png"
-                alt="bs"
-                opacity={locale === 'bs' ? 1 : 0.3}
-              />
-            </div>
-          </div>
+      <div className="navbar-nav ml-auto">
+        <div className="nav-item nav-link">
+          <CountryFlag
+            onClick={() => onLocaleToggle('en')}
+            src="https://cdn1.iconfinder.com/data/icons/ensign-11/512/273_Ensign_Flag_Nation_kingdom-512.png"
+            alt="en"
+            opacity={locale === 'en' ? 1 : 0.3}
+          />
         </div>
-      </nav>
+        <div className="nav-item nav-link">
+          <CountryFlag
+            onClick={() => onLocaleToggle('bs')}
+            src="https://cdn1.iconfinder.com/data/icons/ensign-11/512/36_Ensign_Flag_Nation_bosnia_and_herzegovina-512.png"
+            alt="bs"
+            opacity={locale === 'bs' ? 1 : 0.3}
+          />
+        </div>
+      </div>
     );
   }
 }
