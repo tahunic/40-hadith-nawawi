@@ -23,7 +23,7 @@ function HadithListItem(props) {
           {hadith.summary.length > 250 ? '...' : null}
         </p>
         <Link className="router-link" to={`/hadith/${hadith.hadith.index}`}>
-          <button type="button" className="btn btn-primary">
+          <button type="button" className="btn btn-primary btn-sm">
             <FormattedMessage {...messages.details} />{' '}
           </button>
         </Link>

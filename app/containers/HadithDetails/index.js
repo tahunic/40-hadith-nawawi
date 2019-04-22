@@ -22,6 +22,7 @@ import { loadHadith } from './actions';
 import { makeSelectHadith } from './selectors';
 import AudioPlayerContainer from './AudioPlayerContainer';
 import AudioPlayer from './AudioPlayer';
+import ArabicText from './ArabicText';
 
 /* eslint-disable react/prefer-stateless-function */
 export class HadithDetails extends React.PureComponent {
@@ -45,6 +46,10 @@ export class HadithDetails extends React.PureComponent {
         </Bismillah>
 
         <div className="col-12 pt-3">
+          <ArabicText>{hadith.hadith.original}</ArabicText>
+        </div>
+
+        <div className="col-12 pt-3">
           <p>{hadith.summary}</p>
         </div>
 
@@ -57,6 +62,10 @@ export class HadithDetails extends React.PureComponent {
             allowFullScreen
           />
         </AudioPlayerContainer>
+
+        <div className="col-12 pt-3">
+          <p>{hadith.comment}</p>
+        </div>
       </div>
     );
   }
