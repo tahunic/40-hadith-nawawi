@@ -46,7 +46,7 @@ export class HadithDetails extends React.PureComponent {
         </Bismillah>
 
         <div className="col-12 pt-3">
-          <ArabicText>{hadith.hadith.original}</ArabicText>
+          <ArabicText>{hadith.hadithBase.original}</ArabicText>
         </div>
 
         <div className="col-12 pt-3">
@@ -56,7 +56,7 @@ export class HadithDetails extends React.PureComponent {
         <AudioPlayerContainer className="col-12">
           <AudioPlayer
             title="audio"
-            src={hadith.hadith.audioUrl}
+            src={hadith.hadithBase.audioUrl}
             webkitallowfullscreen="true"
             mozallowfullscreen="true"
             allowFullScreen

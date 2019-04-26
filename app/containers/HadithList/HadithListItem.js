@@ -13,6 +13,7 @@ import messages from './messages';
 
 function HadithListItem(props) {
   const { hadith } = props;
+
   return (
     <div className="card my-2">
       <div className="card-header">{hadith.header}</div>
@@ -22,7 +23,7 @@ function HadithListItem(props) {
           {hadith.summary.substr(0, 250)}
           {hadith.summary.length > 250 ? '...' : null}
         </p>
-        <Link className="router-link" to={`/hadith/${hadith.hadith.index}`}>
+        <Link className="router-link" to={`/hadith/${hadith.hadithBase.index}`}>
           <button type="button" className="btn btn-primary btn-sm">
             <FormattedMessage {...messages.details} />{' '}
           </button>

@@ -37,7 +37,7 @@ export class HadithList extends React.PureComponent {
     }
 
     if (hadiths && hadiths.length > 0) {
-      return hadiths.map(h => <HadithListItem key={h.hadith.index} hadith={h} />);
+      return hadiths.map(h => <HadithListItem key={h.hadithBase.index} hadith={h} />);
     }
 
     return null;
