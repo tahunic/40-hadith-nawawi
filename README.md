@@ -5,3 +5,7 @@
 3.  Move to the appropriate directory: `cd 40-hadith-nawawi`.<br />
 4.  Run `npm install` in order to install dependencies
 5.  Run `npm start` see the app at `http://localhost:3000`.
+
+## Demo
+
+Check live version on http://forty-hadith-nawawi.herokuapp.com/
