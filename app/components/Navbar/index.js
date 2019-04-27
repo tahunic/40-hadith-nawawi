@@ -6,12 +6,10 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 import LocaleToggle from '../../containers/LocaleToggle';
-// import PropTypes from 'prop-types';
-// import styled from 'styled-components';
-
-// import { FormattedMessage } from 'react-intl';
-// import messages from './messages';
+import Search from '../../containers/Search';
+import messages from './messages';
 
 /* eslint-disable react/prefer-stateless-function */
 class Navbar extends React.PureComponent {
@@ -35,15 +33,13 @@ class Navbar extends React.PureComponent {
             <div className="nav-item nav-link">
               <Link className="router-link" to="/">
                 <button type="button" className="nav-link">
-                  Home
+                  <FormattedMessage {...messages.home} />
                 </button>
               </Link>
             </div>
           </div>
           <LocaleToggle />
-          <form className="form-inline my-2 my-lg-0">
-            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-          </form>
+          <Search />
         </div>
       </nav>
     );

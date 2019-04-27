@@ -12,12 +12,14 @@ import { compose } from 'redux';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
+import { FormattedMessage } from 'react-intl';
 import reducer from './reducer';
 import saga from './saga';
 import HadithListItem from './HadithListItem';
 import { loadHadiths } from './actions';
 import LoadingIndicator from '../../components/LoadingIndicator';
 import { makeSelectError, makeSelectHadiths, makeSelectLoading } from './selectors';
+import messages from './messages';
 
 /* eslint-disable react/prefer-stateless-function */
 export class HadithList extends React.PureComponent {
@@ -34,6 +36,19 @@ export class HadithList extends React.PureComponent {
 
     if (error) {
       return <h3>Something went wrong.</h3>;
+    }
+
+    if (hadiths && hadiths.length === 0) {
+      return (
+        <div className="text-center">
+          <h3>
+            <FormattedMessage {...messages.noHadithsFound} />
+          </h3>
+          <p>
+            <FormattedMessage {...messages.tryChangingSearch} />
+          </p>
+        </div>
+      );
     }
 
     if (hadiths && hadiths.length > 0) {

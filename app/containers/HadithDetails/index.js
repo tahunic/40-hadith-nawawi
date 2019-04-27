@@ -39,7 +39,7 @@ export class HadithDetails extends React.PureComponent {
     }
 
     return (
-      <div>
+      <div className="py-3">
         <h1>{hadith.title}</h1>
         <Bismillah>
           <FormattedMessage {...messages.bismillah} />
@@ -64,6 +64,9 @@ export class HadithDetails extends React.PureComponent {
         </AudioPlayerContainer>
 
         <div className="col-12 pt-3">
+          <h5>
+            <FormattedMessage {...messages.comment} />
+          </h5>
           <p>{hadith.comment}</p>
         </div>
       </div>

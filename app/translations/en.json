@@ -1,5 +1,10 @@
 {
+  "components.Navbar.home": "Home",
   "containers.HadithList.details": "Details",
+  "containers.HadithList.noHadithsFound": "No hadiths found.",
+  "containers.HadithList.tryChangingSearch": "Try changing search criteria.",
   "containers.HomePage.header": "Al-Nawawi's Forty Hadith",
-  "containers.HadithDetails.bismillah": "In the name of Allah, the Most Gracious, the Most Merciful."
+  "containers.HadithDetails.bismillah": "In the name of Allah, the Most Gracious, the Most Merciful.",
+  "containers.HadithDetails.comment": "Comment:",
+  "containers.Search.placeholder": "Search"
 }

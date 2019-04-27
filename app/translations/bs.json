@@ -1,5 +1,10 @@
 {
+  "components.Navbar.home": "Početna",
   "containers.HadithList.details": "Detalji",
+  "containers.HadithList.noHadithsFound": "Nijedan hadis nije pronađen.",
+  "containers.HadithList.tryChangingSearch": "Pokušajte promijeniti kriterij pretrage.",
   "containers.HomePage.header": "Četrdeset Nevevijevih hadisa",
-  "containers.HadithDetails.bismillah": "U ime Allaha, Milostivog, Samilosnog."
+  "containers.HadithDetails.bismillah": "U ime Allaha, Milostivog, Samilosnog.",
+  "containers.HadithDetails.comment": "Komentar:",
+  "containers.Search.placeholder": "Pretraži"
 }

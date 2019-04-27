@@ -19,7 +19,11 @@ export default class HomePage extends React.PureComponent {
   render() {
     return (
       <div>
-        <FormattedMessage {...messages.header} />
+        <div className="text-center pb-5">
+          <h1>
+            <FormattedMessage {...messages.header} />
+          </h1>
+        </div>
         <HadithList />
       </div>
     );

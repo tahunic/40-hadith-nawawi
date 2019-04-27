@@ -16,5 +16,9 @@ export default defineMessages({
   bismillah: {
     id: `${scope}.bismillah`,
     defaultMessage: 'In the name of Allah, the Most Gracious, the Most Merciful.',
-  }
+  },
+  comment: {
+    id: `${scope}.comment`,
+    defaultMessage: 'Comment:',
+  },
 });

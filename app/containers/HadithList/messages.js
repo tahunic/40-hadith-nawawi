@@ -17,4 +17,12 @@ export default defineMessages({
     id: `${scope}.details`,
     defaultMessage: 'Details',
   },
+  noHadithsFound: {
+    id: `${scope}.noHadithsFound`,
+    defaultMessage: 'No hadiths found.',
+  },
+  tryChangingSearch: {
+    id: `${scope}.tryChangingSearch`,
+    defaultMessage: 'Try changing search criteria.',
+  },
 });
