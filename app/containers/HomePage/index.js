@@ -18,7 +18,7 @@ import HadithList from '../HadithList';
 export default class HomePage extends React.PureComponent {
   render() {
     return (
-      <div>
+      <div className="container">
         <div className="text-center pb-5">
           <h1>
             <FormattedMessage {...messages.header} />

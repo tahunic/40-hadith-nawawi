@@ -42,7 +42,7 @@ export class HadithDetails extends React.PureComponent {
     }
 
     return (
-      <div className="my-3">
+      <div className="container my-3">
         <h1>{hadith.title}</h1>
         <Bismillah>
           <FormattedMessage {...messages.bismillah} />
@@ -56,15 +56,17 @@ export class HadithDetails extends React.PureComponent {
           <p>{hadith.summary}</p>
         </div>
 
-        <AudioPlayerContainer className="col-12">
-          <AudioPlayer
-            title="audio"
-            src={`${hadith.hadithBase.audioUrl}?autoplay=1`}
-            webkitallowfullscreen="true"
-            mozallowfullscreen="true"
-            allowFullScreen
-          />
-        </AudioPlayerContainer>
+        <div className="col-12">
+          <AudioPlayerContainer>
+            <AudioPlayer
+              title="audio"
+              src={`${hadith.hadithBase.audioUrl}?autoplay=1`}
+              webkitallowfullscreen="true"
+              mozallowfullscreen="true"
+              allowFullScreen
+            />
+          </AudioPlayerContainer>
+        </div>
 
         <div className="col-12 py-3">
           <h5>

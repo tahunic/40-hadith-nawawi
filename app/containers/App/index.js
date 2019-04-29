@@ -20,7 +20,7 @@ import Navbar from '../../components/Navbar';
 
 export default function App() {
   return (
-    <div className="container">
+    <div>
       <Helmet titleTemplate="%s - Al-Nawawi's Forty Hadith" defaultTitle="Al-Nawawi's Forty Hadith">
         <meta name="description" content="Al-Nawawi's Forty Hadith application" />
       </Helmet>
