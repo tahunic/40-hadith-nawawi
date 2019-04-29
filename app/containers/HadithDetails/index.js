@@ -13,6 +13,7 @@ import { compose } from 'redux';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
+import ReactPlayer from 'react-player';
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
@@ -23,6 +24,8 @@ import { makeSelectHadith } from './selectors';
 import AudioPlayerContainer from './AudioPlayerContainer';
 import AudioPlayer from './AudioPlayer';
 import ArabicText from './ArabicText';
+import ReactPlayerContainer from './ReactPlayerContainer';
+import './style.css';
 
 /* eslint-disable react/prefer-stateless-function */
 export class HadithDetails extends React.PureComponent {
@@ -39,7 +42,7 @@ export class HadithDetails extends React.PureComponent {
     }
 
     return (
-      <div className="py-3">
+      <div className="my-3">
         <h1>{hadith.title}</h1>
         <Bismillah>
           <FormattedMessage {...messages.bismillah} />
@@ -56,18 +59,24 @@ export class HadithDetails extends React.PureComponent {
         <AudioPlayerContainer className="col-12">
           <AudioPlayer
             title="audio"
-            src={hadith.hadithBase.audioUrl}
+            src={`${hadith.hadithBase.audioUrl}?autoplay=1`}
             webkitallowfullscreen="true"
             mozallowfullscreen="true"
             allowFullScreen
           />
         </AudioPlayerContainer>
 
-        <div className="col-12 pt-3">
+        <div className="col-12 py-3">
           <h5>
             <FormattedMessage {...messages.comment} />
           </h5>
           <p>{hadith.comment}</p>
+        </div>
+
+        <div className="col-12 py-3">
+          <ReactPlayerContainer>
+            <ReactPlayer className="player" width="100%" height="100%" url={hadith.lectureUrl} controls />
+          </ReactPlayerContainer>
         </div>
       </div>
     );
