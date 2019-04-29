@@ -17,24 +17,33 @@ import reducer from './reducer';
 import messages from './messages';
 import { changeTerm } from './actions';
 import { loadHadiths } from '../HadithList/actions';
+import { makeSelectLocation } from '../App/selectors';
 
 /* eslint-disable react/prefer-stateless-function */
 export class Search extends React.PureComponent {
-  render() {
-    const { term, onChangeTerm, intl } = this.props;
+  handleSubmit(e) {
+    e.preventDefault();
+  }
 
-    return (
-      <form className="form-inline my-2 my-lg-0">
-        <input
-          value={term}
-          onChange={onChangeTerm}
-          className="form-control mr-sm-2"
-          type="search"
-          placeholder={intl.formatMessage({ id: messages.placeholder.id })}
-          aria-label="Search"
-        />
-      </form>
-    );
+  render() {
+    const { term, onChangeTerm, intl, location } = this.props;
+
+    if (location.pathname === '/') {
+      return (
+        <form className="form-inline my-2 my-lg-0" onSubmit={e => this.handleSubmit(e)}>
+          <input
+            value={term}
+            onChange={onChangeTerm}
+            className="form-control mr-sm-2"
+            type="search"
+            placeholder={intl.formatMessage({ id: messages.placeholder.id })}
+            aria-label="Search"
+          />
+        </form>
+      );
+    }
+
+    return null;
   }
 }
 
@@ -42,10 +51,12 @@ Search.propTypes = {
   term: PropTypes.string,
   onChangeTerm: PropTypes.func,
   intl: PropTypes.any,
+  location: PropTypes.object,
 };
 
 const mapStateToProps = createStructuredSelector({
   term: makeSelectTerm(),
+  location: makeSelectLocation(),
 });
 
 function mapDispatchToProps(dispatch) {
